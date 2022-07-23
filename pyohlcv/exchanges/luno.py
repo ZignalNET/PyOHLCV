@@ -4,7 +4,7 @@
     By          :   Emmanuel Adigun (emmanuel@zignal.net)
     Date        :   01 July 2022
 """
-from pandas import DataFrame
+from pandas import DataFrame, to_datetime
 from ..base import Base
 from ..error import Error
 
@@ -46,7 +46,8 @@ class Luno(Base):
                         limit:     int = 100
                   ) -> DataFrame:
         """
-            GET /api/exchange/1/candles
+            GET /api/exchange/1/candles, returns
+                dataframe: DataFrame or empty dataframe, timestamp is converted to python datetime object
         """
         period = Luno.LUNO_KLINE_1M
         if timeframe.upper() in self.klines: period = self.klines[timeframe.upper()]
@@ -54,12 +55,14 @@ class Luno(Base):
         url = self.buildURL('/api/exchange/1/candles',params)
         args = dict(timeout=self.timeout, params=params, headers=self.generateHeader(), auth=(self.api_key, self.api_secret))
         response = self.perform_request('GET',url,**args)
+        df = DataFrame()  #default return value
         if not 'error' in response:
             lines = response['data']
             if 'candles' in lines:
-                print( len(lines['candles']) )
-                print( lines['candles'][0] )
+                df = DataFrame(data=lines['candles'], columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+                df['timestamp'] = to_datetime(df['timestamp'], unit='ms')
         else: print( response['error_text'])
+        return df
 
 
 
