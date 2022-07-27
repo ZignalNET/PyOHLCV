@@ -7,6 +7,8 @@ from pyohlcv import Luno
 from pyohlcv import Binance
 from pyohlcv import CoinbasePro
 from pyohlcv import Kucoin
+from pyohlcv import Kraken
+from pyohlcv import Digifinex
 
 
 print( pyohlcv.exchanges )
@@ -37,9 +39,21 @@ if not df.empty:
 	print( df.tail(5) )
 """
 
-
+"""
 kucoin = Kucoin(api_key='',api_secret='')
 df = kucoin.fetchOhlcv(symbol='BTC-USDT',timeframe='1min', start_time="2021-01-01 03:59:59+02:00", end_time="2021-01-02 16:59:59+02:00")
 if not df.empty: print( df )
-time.sleep(2)
+"""
+
+"""
+kraken = Kraken(api_key='',api_secret='')
+df = kraken.fetchOhlcv(symbol='XBTUSD',timeframe='30m', since="2022-07-10 03:59:59")
+if not df.empty: print( df )
+"""
+
+
+digifinex = Digifinex(api_key='',api_secret='')
+df = digifinex.fetchOhlcv(symbol='btc_usdt',timeframe='1', start_time="2021-01-01 03:59:59+02:00", end_time="2021-01-02 16:59:59+02:00")
+if not df.empty: print( df )
+
 

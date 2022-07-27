@@ -70,8 +70,6 @@ class Kucoin(Base):
                     #Append to array
                     rows += row
 
-                    
-                    
                     #Reset start datetime
                     if start_time != None and len(row) > 0:
                         from_time = int(row[len(row) - 1][0])

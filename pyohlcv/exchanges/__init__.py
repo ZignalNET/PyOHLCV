@@ -8,10 +8,14 @@ from .luno import Luno
 from .binance import Binance
 from .coinbasepro import CoinbasePro
 from .kucoin import Kucoin
+from .kraken import Kraken
+from .digifinex import Digifinex
 
 exchanges = [
                 'Binance',
                 'Coinbase Pro',
                 'Luno',
-                'Kucoin'
+                'Kucoin',
+                'Kraken',
+                'Digifinex'
 ]
