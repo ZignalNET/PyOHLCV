@@ -1,6 +1,13 @@
 # PyOHLCV
 A Python package that fetches historical OHLCV data from supported exchanges into Panda dataframe using python requests and pandas.
 
+## Dependencies
+```sh
+Python Requestes
+Pandas
+Pandas_ta
+```
+
 ## Usage
 ```sh
 from pyohlcv import Idex
