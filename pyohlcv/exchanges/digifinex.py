@@ -39,8 +39,8 @@ class Digifinex(Base):
 
         from_time = to_time = None
         if start_time != None:
-            from_time = int(datetime.fromisoformat(start_time).timestamp())
-            to_time   = int(datetime.now().timestamp()) if end_time == None else int(datetime.fromisoformat(end_time).timestamp())
+            from_time = int(datetime.fromisoformat(start_time).timestamp()*1000)
+            to_time   = int(datetime.now().timestamp()) if end_time == None else int(datetime.fromisoformat(end_time).timestamp()*1000)
 
         #KLine endpoint
         url = self.buildURL('/v3/kline'.format(),{})

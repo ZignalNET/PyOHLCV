@@ -10,6 +10,7 @@ from .coinbasepro import CoinbasePro
 from .kucoin import Kucoin
 from .kraken import Kraken
 from .digifinex import Digifinex
+from .idex  import Idex
 
 exchanges = [
                 'Binance',
@@ -17,5 +18,6 @@ exchanges = [
                 'Luno',
                 'Kucoin',
                 'Kraken',
-                'Digifinex'
+                'Digifinex',
+                'Idex'
 ]

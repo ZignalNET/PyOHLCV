@@ -5,6 +5,6 @@
     Date        :   01 July 2022
 """
 from .base import Base
-from .exchanges import (exchanges,Luno,Binance,CoinbasePro,Kucoin,Kraken,Digifinex)
+from .exchanges import (exchanges,Luno,Binance,CoinbasePro,Kucoin,Kraken,Digifinex,Idex)
 
 
