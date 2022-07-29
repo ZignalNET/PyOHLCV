@@ -27,7 +27,8 @@ if not df.empty:
 92 2022-07-29 07:45:00  399866.00  400900.00  399431.00  400546.00  7.194648
 93 2022-07-29 08:00:00  400078.00  400898.00  398462.00  400250.00   3.88822
 
-![newplot](https://user-images.githubusercontent.com/100917638/181716700-680b3b59-9364-4f08-aa95-87cdaf76bbc5.png)
+![luno](https://user-images.githubusercontent.com/100917638/181716949-3f48ef53-923e-4d9d-9ec6-9358fc8bed0f.png)
+
 
 ```
 
