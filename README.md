@@ -3,7 +3,7 @@ A Python package that fetches historical OHLCV data from supported exchanges int
 
 ## Dependencies
 ```sh
-Python Requestes
+Requests
 Pandas
 Pandas_ta
 ```
