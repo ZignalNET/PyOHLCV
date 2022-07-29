@@ -9,6 +9,28 @@ Pandas_ta
 ```
 
 ## Usage
+
+```sh
+from pyohlcv import Luno
+luno = Luno(api_key=environ['API_KEY_LUNO'],api_secret=environ['API_SECRET_LUNO'])
+since = int(time.time()*1000)-24*60*59*1000
+df = luno.fetchOhlcv(symbol='XBTZAR',timeframe='15m',since=since)
+if not df.empty: 
+	print( df.tail(5) )
+	sma10 = df.ta.sma(length=10)
+	print(sma10.tail(5))
+	
+	timestamp       open       high        low      close    volume
+89 2022-07-29 07:00:00  400751.00  400782.00  399264.00  399499.00  9.950004
+90 2022-07-29 07:15:00  399907.00  400271.00  397224.00  398520.00  6.288367
+91 2022-07-29 07:30:00  398906.00  400700.00  397851.00  399898.00  5.567731
+92 2022-07-29 07:45:00  399866.00  400900.00  399431.00  400546.00  7.194648
+93 2022-07-29 08:00:00  400078.00  400898.00  398462.00  400250.00   3.88822
+
+![newplot](https://user-images.githubusercontent.com/100917638/181716700-680b3b59-9364-4f08-aa95-87cdaf76bbc5.png)
+
+```
+
 ```sh
 from pyohlcv import Idex
 idex = Idex(api_key='',api_secret='')
