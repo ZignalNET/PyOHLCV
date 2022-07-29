@@ -4,6 +4,8 @@ A Python package that fetches historical OHLCV data from supported exchanges int
 ## Dependencies
 ```sh
 Requests, Pandas and Pandas_ta
+
+pip install requests, pandas, pandas_ta
 ```
 
 ## Usage
