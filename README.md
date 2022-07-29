@@ -3,13 +3,14 @@ A Python package that fetches historical OHLCV data from supported exchanges int
 
 ## Usage
 ```sh
+from pyohlcv import Idex
 idex = Idex(api_key='',api_secret='')
 df = idex.fetchOhlcv(symbol='ETH-USDC',timeframe='1m', start_time="2022-02-02T14:15:00+02:00", end_time="2022-06-02T05:59:59+02:00")
 if not df.empty: 
 	print( df )
   
   
-timestamp           open           high            low          close      volume  sequence
+		timestamp           open           high            low          close      volume  sequence
 0     2022-02-02 12:15:00  2785.93000000  2785.93000000  2785.51000000  2785.51000000  0.18000000     67671
 1     2022-02-02 12:17:00  2785.08000000  2785.08000000  2785.08000000  2785.08000000  0.11000000     67673
 2     2022-02-02 12:19:00  2785.08000000  2785.08000000  2784.74000000  2784.74000000  0.18000000     67675
@@ -24,5 +25,15 @@ timestamp           open           high            low          close      volum
 
 
 ```
+
+## Supported Exchanges
+```sh
+import pyohlcv
+
+print( pyohlcv.exchanges )
+['Binance', 'Coinbase Pro', 'Luno', 'Kucoin', 'Kraken', 'Digifinex', 'Idex']
+
+```
+
 
 
