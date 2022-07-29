@@ -33,6 +33,9 @@ if not df.empty:
 
 ```
 
+![newplot](https://user-images.githubusercontent.com/100917638/181715844-40490e2e-ee52-4175-bbd5-23fb985834d9.png)
+
+
 ## Supported Exchanges
 ```sh
 import pyohlcv
